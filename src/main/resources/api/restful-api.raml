@@ -1,0 +1,48 @@
+#%RAML 1.0
+title: rest-api
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+/addProducts:
+  post:
+    body:
+      properties:
+        productId:
+          example: "1"
+          type: string
+        name:
+          example: apple
+          type: string
+        description:
+          example: apple products
+          type: string
+        originalPrice:
+          example: "1000"
+          type: string
+        offerPrice:
+          example: "100"
+          type: string
+        offerValidUntil:
+          example: "1645183163218"
+          type: string
+        brandName:
+          example: Apple
+          type: string
+    responses:
+      "200": {}
+      "400": {}
+/allproducts:
+  get:
+    responses:
+      "200": {}
+      "400": {}
+/getProductByName:
+  get:
+    queryParameters:
+      pname:
+        example: apple
+        type: string
+    responses:
+      "200": {}
+      "400": {}
